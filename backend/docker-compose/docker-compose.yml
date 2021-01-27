@@ -9,9 +9,15 @@ services:
       - 'EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka'
       - 'SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config'
       - 'SPRING_DATASOURCE_URL=jdbc:oracle:thin:@canaletico-oracle:1521:canaletico'
-      - JHIPSTER_SLEEP=30
+      - JHIPSTER_SLEEP=60
       - JHIPSTER_REGISTRY_PASSWORD=admin
-
+    deploy:
+        resources:
+            limits:
+              cpus: 1
+              memory: 512M
+            reservations:
+              memory: 256M
   contenedor_canaletico:
     image: contenedor_canaletico
     environment:
@@ -21,11 +27,30 @@ services:
       - 'EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka'
       - 'SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config'
       - 'SPRING_DATASOURCE_URL=jdbc:oracle:thin:@contenedor_canaletico-oracle:1521:contenedor_canaletico'
-      - JHIPSTER_SLEEP=30
+      - JHIPSTER_SLEEP=60
       - JHIPSTER_REGISTRY_PASSWORD=admin
     ports:
       - '8080:8080'
-
+    deploy:
+        resources:
+            limits:
+              cpus: 1
+              memory: 512M
+            reservations:
+              memory: 256M
+  oracle_db:
+    image: store/oracle/database-enterprise:12.2.0.1-slim
+    ports:
+      - '1521:1521'
+    deploy:
+        resources:
+            limits:
+              cpus: 1
+              memory: 1G
+            reservations:
+              memory: 512M
+    volumes:
+       - ../../database/data:/ORCL
   jhipster-registry:
     extends:
       file: jhipster-registry.yml

@@ -41,7 +41,7 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:oracle:thin:@localhost:1521:ORCLCDB
-    username: canaletico_contenedor
+    username: CANALETICO_CONTENEDOR
     password: Prosegur8417
     hikari:
       poolName: Hikari

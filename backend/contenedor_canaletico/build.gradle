@@ -145,7 +145,7 @@ liquibase {
         main {
             driver "oracle.jdbc.OracleDriver"
             url "jdbc:oracle:thin:@localhost:1521:ORCLCDB"
-            username "canaletico_contenedor"
+            username "CANALETICO_CONTENEDOR"
             password "Prosegur8417"
             changeLogFile "src/main/resources/config/liquibase/master.xml"
             defaultSchemaName ""
@@ -155,7 +155,7 @@ liquibase {
         diffLog {
             driver "oracle.jdbc.OracleDriver"
             url "jdbc:oracle:thin:@localhost:1521:ORCLCDB"
-            username "canaletico_contenedor"
+            username "CANALETICO_CONTENEDOR"
             password "Prosegur8417"
             changeLogFile project.ext.diffChangelogFile
             referenceUrl "hibernate:spring:com.prosegur.canaletico.domain?dialect=org.hibernate.dialect.Oracle12cDialect&hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy"
