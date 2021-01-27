@@ -1,0 +1,38 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.prosegur.canaletico"
+    },
+    "jhipsterVersion": "6.10.5",
+    "applicationType": "microservice",
+    "baseName": "canaletico",
+    "packageName": "com.prosegur.canaletico",
+    "packageFolder": "com/prosegur/canaletico",
+    "serverPort": "8081",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "oracle",
+    "prodDatabaseType": "oracle",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "gradle",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "OWFjNWM0YWU0ODdhOGQwN2EwOGU3YjdiMmI3ZmE3OGE1NDI5NzI1OGQzZGZmMDQ5ZDFiYTllNDgxYTYzZmVkM2Y2YTE4NjNiNjlkZGU0Njc2MjViODBiN2M4MTYwZDFmZjAxODJlODVlZTFkNWI5ZGM1OTgwNGQyNGU4YWI2OTU=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1611705009913,
+    "testFrameworks": ["gatling"],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "clientPackageManager": "npm",
+    "blueprints": [],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}

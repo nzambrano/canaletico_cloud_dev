@@ -1,0 +1,11 @@
+{
+  "generator-jhipster": {
+    "appsFolders": ["canaletico", "contenedor_canaletico"],
+    "directoryPath": "../",
+    "gatewayType": "zuul",
+    "monitoring": "no",
+    "consoleOptions": [],
+    "serviceDiscoveryType": "eureka",
+    "jwtSecretKey": "NzY4ODYxMTBiMDcwY2Y4NDc0NDVmZmE4ODhiZjc2YzE5YTA0NDIxNzI1ZmEyODg0MzcxN2RiOGNlYzQxMWM0MmQ1MzAyYjkxNTVkZmJlZTFiZDk0YmZkNjIyOGExOTVjMmRlYg=="
+  }
+}
