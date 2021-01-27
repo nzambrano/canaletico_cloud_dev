@@ -28,7 +28,7 @@ plugins {
 }
 
 group = "com.prosegur.canaletico"
-version = "0.0.1-SNAPSHOT"
+version = "Developer"
 
 description = ""
 
