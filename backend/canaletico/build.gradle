@@ -25,7 +25,12 @@ plugins {
     id "org.sonarqube"
     id "io.spring.nohttp"
     //jhipster-needle-gradle-plugins - JHipster will add additional gradle plugins here
+    
+    //Agregado oara que recocer plugin que genera las entidades desde BD
+    id "org.hibernate.gradle.tools" version "1.2.5"
 }
+
+apply plugin: "hibernatetools-gradle-plugin"
 
 group = "com.prosegur.canaletico"
 version = "Developer"
@@ -205,6 +210,12 @@ dependencies {
     if (!project.hasProperty("gae")) {
         implementation platform("io.github.jhipster:jhipster-dependencies:${jhipster_dependencies_version}")
     }
+    
+    //Agregar dependencias faltantes
+    compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
+	compile group: 'org.glassfish.jaxb', name: 'jaxb-runtime', version: '2.3.3'
+	compile group: 'com.oracle.database.jdbc', name: 'ojdbc8', version: '19.8.0.0'
+    
 
     // Use ", version: jhipster_dependencies_version, changing: true" if you want
     // to use a SNAPSHOT release instead of a stable release
@@ -306,6 +317,23 @@ task cleanResources(type: Delete) {
 
 wrapper {
     gradleVersion = "6.5"
+}
+
+//Agregado para la importacion masiva
+import org.hibernate.gradle.tools.*
+
+
+//Recordar modificar los archivos de configuracion, BUG encontrado para plataforma Oracle
+//Todos los archivos , por mas que se definan en el paquete indicado , solo estan disponibles en la carpeta build
+database{
+    catalog = [ "catalog1": new Schema() ]    
+    url         = "jdbc:oracle:thin:@localhost:1521:ORCLCDB"
+    user = "CANALETICO"
+    password = "Prosegur8417"
+    driver = "oracle.jdbc.OracleDriver"
+    basePackage = "com.prosegur.canaletico.domain"
+    dialect = "org.hibernate.dialect.OracleDialect"
+    port = 1521
 }
 
 compileJava.dependsOn processResources
